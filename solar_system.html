@@ -1,0 +1,384 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        .solar-system {
+            position: relative;
+        }
+
+        .sun {
+            width: 100px;
+            height: 100px;
+            background-color: #ff9d00;
+            border-radius: 50%;
+            position: absolute;
+            top: calc(50% - 50px);
+            left: calc(50% - 50px);
+            z-index: 90;
+            box-shadow: 0 0 75px #ff4800c5;
+        }
+
+        .earth-orbit {
+            width: 350px;
+            height: 350px;
+            position: absolute;
+            top: calc(50% - 175px);
+            left: calc(50% - 175px);
+            border: 1px dashed #fff;
+            border-radius: 50%;
+            z-index: 9;
+            animation: orbit-earth 36.5s linear infinite;
+        }
+
+        .earth {
+            width: 39px;
+            height: 39px;
+            background-color: blue;
+            border-radius: 50%;
+            position: absolute;
+            top: -19.5px;
+            left: calc(50% - 19.5px);
+            box-shadow: 0 0 10px blue;
+        }
+
+        .moon-orbit {
+            width: 65px;
+            height: 65px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -32.5px;
+            margin-left: -32.5px;
+            border: 1px dashed grey;
+            border-radius: 50%;
+            animation: orbit-moon 2.77s linear infinite;
+        }
+
+        .moon {
+            width: 10px;
+            height: 10px;
+            background-color: #cebaa0;
+            border-radius: 50%;
+            position: absolute;
+            top: -5px;
+            left: calc(50% - 5px);
+            box-shadow: 0px 0px 10px rgb(255, 255, 255);
+        }
+
+        /* Animations */
+
+        @keyframes orbit-earth {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes orbit-moon {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes anticlock {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        /* Other Planets and orbits */
+
+        .budh-orbit {
+            width: 160px;
+            height: 160px;
+            position: absolute;
+            top: calc(50% - 80px);
+            left: calc(50% - 80px);
+            border: 1px dashed #fff;
+            border-radius: 50%;
+            animation: orbit-earth 10s linear infinite;
+        }
+
+        .budh {
+            width: 25px;
+            height: 25px;
+            background-color: #ff6f00;
+            border-radius: 50%;
+            position: absolute;
+            top: -12px;
+            left: calc(50% - 12.5px);
+            box-shadow: 0 0 10px #ff6f00;
+        }
+
+        .sukra-orbit {
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            top: calc(50% - 125px);
+            left: calc(50% - 125px);
+            border: 1px dashed #fff;
+            border-radius: 50%;
+            animation: anticlock 40s linear infinite;
+        }
+
+        .sukra {
+            width: 25px;
+            height: 25px;
+            background-color: #ff2200;
+            border-radius: 50%;
+            position: absolute;
+            top: -7.5px;
+            left: calc(50% - 7.5px);
+            box-shadow: 0 0 10px #ff0d00;
+        }
+
+        .uposuk-orbit1 {
+            width: 45px;
+            height: 45px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -22.5px;
+            margin-left: -22.5px;
+            border: 1px dashed grey;
+            border-radius: 50%;
+            animation: orbit-moon 2s linear infinite;
+
+        }
+
+        .uposuk1 {
+            width: 6px;
+            height: 6px;
+            background-color: #0ea5f7;
+            border-radius: 50%;
+            position: absolute;
+            top: -3px;
+            left: calc(50% - 3px);
+            box-shadow: 0 0 5px #0ea5f7;
+        }
+
+        .uposuk-orbit2 {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -30px;
+            margin-left: -30px;
+            border: 1px dashed grey;
+            border-radius: 50%;
+            animation: anticlock 10s linear infinite;
+        }
+
+        .uposuk2 {
+            width: 9px;
+            height: 9px;
+            background-color: #9a4178;
+            border-radius: 50%;
+            position: absolute;
+            top: -4.5px;
+            left: calc(50% - 4.5px);
+            box-shadow: 0 0 9px #ff029e;
+        }
+
+        .uposuk-orbit3 {
+            width: 75px;
+            height: 75px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -37.5px;
+            margin-left: -37.5px;
+            border: 1px dashed grey;
+            border-radius: 50%;
+            animation: anticlock 1s linear infinite;
+        }
+
+        .uposuk3 {
+            width: 15px;
+            height: 15px;
+            background-color: #f6ff00;
+            border-radius: 50%;
+            position: absolute;
+            top: -4.5px;
+            left: calc(50% - 4.5px);
+            box-shadow: 0 0 10px #f6ff00;
+            z-index: -1;
+        }
+
+        div{
+            text-align: center;
+            align-content: center;
+        }
+
+        .mars-orbit{
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: calc(50% - 250px);
+            left: calc(50% - 250px);
+            border: 1px dashed #fff;
+            border-radius: 50%;
+            animation: orbit-earth 52s linear infinite;
+        }
+
+        .mars{
+            width: 55px;
+            height: 55px;
+            background-color: #8e0638;
+            border-radius: 50%;
+            position: absolute;
+            top: -19.5px;
+            left: calc(50% - 19.5px);
+            box-shadow: 0 0 15px #d3165c;
+        }
+
+        .mars-upo1-orbt{
+            width: 80px;
+            height: 80px;
+            border: 1px dashed grey;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -40px;
+            margin-left: -40px;
+            animation: anticlock 2s linear infinite;
+        }
+
+        .mars-upo1{
+            width: 12px;
+            height: 12px;
+            background-color: #f6ff00;
+            border-radius: 50%;
+            position: absolute;
+            top: -4.5px;
+            left: calc(50% - 4.5px);
+            box-shadow: 0 0 10px #e1ff00;
+            z-index: -1;
+        }
+
+        .mars-upo2-orbt{
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -60px;
+            margin-left: -60px;
+            border: 1px dashed grey;
+            border-radius: 50%;
+            animation: orbit-moon 28s linear infinite;
+        }
+
+        .mars-upo2{
+            width: 12px;
+            height: 12px;
+            background-color: #0400ff;
+            border-radius: 50%;
+            position: absolute;
+            top: -4.5px;
+            left: calc(50% - 4.5px);
+            box-shadow: 0 0 10px #0400ff;
+            z-index: -1;
+        }
+
+        .mars-upo3-orbt{
+            width: 155px;
+            height: 155px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -77.5px;
+            margin-left: -77.5px;
+            border: 1px dashed grey;
+            border-radius: 50%;
+            animation: orbit-moon 1s linear infinite;
+        }
+
+        .mars-upo3{
+            width: 12px;
+            height: 12px;
+            background-color: #00ffdd;
+            border-radius: 50%;
+            position:absolute;
+            top: -4.5px;
+            left: calc(50% - 4.5px);
+            box-shadow: 0 0 10px #00ffdd;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="solar-system">
+        <div class="sun"></div>
+        <div class="budh-orbit">
+            <div class="budh"></div>
+        </div>
+        <div class="sukra-orbit">
+            <div class="sukra">
+                <div class="uposuk-orbit1">
+                    <div class="uposuk1"></div>
+                </div>
+                <div class="uposuk-orbit2">
+                    <div class="uposuk2"></div>
+                </div>
+                <div class="uposuk-orbit3">
+                    <div class="uposuk3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="earth-orbit">
+            <div class="earth">
+                <div class="moon-orbit">
+                    <div class="moon"></div>
+                </div>
+            </div>
+        </div>
+        <div class="mars-orbit">
+            <div class="mars">
+                <div class="mars-upo1-orbt">
+                    <div class="mars-upo1"></div>
+                </div>
+                <div class="mars-upo2-orbt">
+                    <div class="mars-upo2"></div>
+                </div>
+                <div class="mars-upo3-orbt">
+                    <div class="mars-upo3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
