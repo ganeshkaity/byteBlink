@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Notes</title>
+  <link rel="stylesheet" href="toDo.css">
+</head>
+
+<body>
+  <dialog id="savedItemsDialog">
+    <h3>All Saved Items</h3>
+    <hr>
+    <div id="thss">
+      <ul id="savedItemsList"></ul>
+    </div>
+    <button onclick="closeSavedItemsDialog()">Close</button>
+
+  </dialog>
+  <dialog id="alertDialog">
+    <p id="alertMessage">Please fill out both fields!</p>
+    <button onclick="closeDialog()">OK</button>
+  </dialog>
+  <div class="particle-bg"></div>
+  
+  <div id="1stContainer" class="container">
+    <h1>My Notes</h1>
+    <input oninput="updtRming()" id="titleInput" type="text" placeholder="Enter title" />
+    <div id="warXtra"><span id="rmning">0</span> / 30 characters</div>
+    <textarea id="inputArea" rows="4" placeholder="Type something..."></textarea>
+    <button onclick="saveFile()">Save</button> <!-- Save Button -->
+    <button id="savedItemsButton" onclick="openSavedItemsDialog()">Saved Items</button>
+    <button id="deleteToggle" onclick="toggleDeleteMode()">Delete</button>
+    <div class="delete-options" id="deleteOptions">
+      <button onclick="selectAll()">Select All</button>
+      <button onclick="deselectAll()">Deselect All</button>
+      <button onclick="deleteSelectedFiles()">Delete Selected</button>
+    </div>
+    <div class="recent" id="recentDiv">
+      <h3>Recent Files</h3>
+      <div id="listt">
+        <ul id="recentList"></ul>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  <div id="cont2" class="container  second">
+    <div id="clBt1" onclick="closeTheCont()"><b>✕</b></div>
+    <h2><span id="ttl2">Title</span></h1>
+      <hr>
+      <textarea id="texts"></textarea>
+  </div>
+  <script src="toDo.js"></script>
+
+</body>
+
+</html>
