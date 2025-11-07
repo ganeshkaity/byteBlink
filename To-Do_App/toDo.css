@@ -1,0 +1,400 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none; 
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1e293b;
+    position: relative;
+    color: white;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    padding-left: 20px;
+}
+
+
+/* Particle Background */
+.particle-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 105%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: float 15s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateY(-300px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+}
+
+/* Glassmorphism Container */
+.container {
+    position: relative;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 30px;
+    width: 90%;
+    max-width: 600px;
+    height: 90vh;
+    max-height: 90vh;
+    top: 25px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+input,
+textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+}
+
+textarea {
+    text-decoration: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 5px;
+    
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+.recent {
+    margin-top: 20px;
+    text-align: left;
+    
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    margin: 8px 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s ease;
+    position: relative;
+    cursor: pointer;
+    scrollbar-width: none;
+}
+
+li:hover {
+    transform: rotate(3deg);
+}
+
+li .tooltip {
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.609);
+    color: #ffffff96;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    left: 80%;
+    position: absolute;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 14px;
+    z-index: 100000;
+}
+
+li:hover .tooltip {
+    visibility: visible;
+}
+
+.delete-options {
+    justify-content: space-between;
+    margin-top: 15px;
+    display: none;
+}
+
+.delete-options.visible {
+    display: flex;
+}
+
+.delete-options button {
+    width: 30%;
+    font-size: smaller;
+    height: fit-content;
+}
+
+/* Checkbox Styling */
+.checkbox {
+    accent-color: #ff02023e;
+    /* Green accent */
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    /* Round checkbox */
+    margin: 2px;
+    margin-left: auto;
+    display: none;
+    padding: 0;
+    /* Initially hidden */
+
+}
+
+/* Dialog styling */
+dialog {
+    border-radius: 10px;
+    background: rgba(248, 239, 239, 0.9);
+    color: black;
+    padding: 20px;
+    border: 1px solid;
+    font-size: 1rem;
+    max-width: 600px;
+    width: fit-content;
+    max-width: 50vw;
+    height: fit-content;
+    max-height: 50vh;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    scrollbar-width: thin;
+    inset: 0;
+    margin: auto;
+}
+
+dialog ul {
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+
+dialog li {
+    background: rgba(255, 255, 255, 0.718);
+    padding: 10px 15px;
+    margin: 8px 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+dialog button {
+    background-color: #b4b4b4;
+    height: 2em;
+    text-align: center;
+    padding: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+dialog li:hover {
+    color: #06910b;
+}
+
+dialog button:hover {
+    background-color: rgb(247, 162, 162);
+    scale: 1.1;
+}
+
+#listt {
+    width: 100%;
+    height: 30vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+#savedItemsDialog {
+    z-index: 100;
+    width: 50%;
+    height: 50%;
+    scrollbar-width: none;
+}
+
+#ganesh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#thss {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    overflow-x: hidden;
+    height: 75%;
+    margin-left: 15px;
+}
+
+.second {
+    color: rgb(214, 236, 255);
+    margin-left: 5px;
+    background-color: #142e4582;
+    overflow: hidden;
+    display: none;
+    animation: openC2 1s ease;
+}
+
+
+.second h2 {
+    text-align: left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+.second #texts {
+    overflow: unset;
+    text-align: left;
+    margin-top: 10px;
+    height: 93%;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    color: rgb(255, 255, 255);
+    border-radius: 0;
+    font-size: 15px;
+    scrollbar-width: none;
+}
+
+#clBt1 {
+    float: right;
+    padding: 3px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+    width: max-content;
+    font-size: 3vh;
+    margin-top: -15px;
+    margin-right: -12px;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+
+}
+
+#clBt1:hover {
+    scale: 1.1;
+    background-color: #ff00001b;
+}
+
+@keyframes openC2 {
+    0% {
+        scale: 0.1;
+        top: 30%;
+    }
+
+    100% {
+        scale: 1;
+        left: auto;
+    }
+}
+
+@keyframes closeC2 {
+    0% {
+        scale: 1;
+    }
+
+    100% {
+        scale: 0;
+        top: 30%;
+    }
+}
+
+#warXtra {
+    font-size: small;
+    text-align: right;
+    margin-top: 2px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: #ffffff78;
+    
+}
+
+#titleInput {
+    margin-bottom: 0px;
+}
+
+@media (max-width :600px){
+    body{
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+
+    .second{
+        margin-top: 2%;
+    }
+}
