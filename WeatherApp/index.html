@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Weather</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="phone-shell" id="app">
+    <header class="topbar">
+      <div class="left-col">
+        <div class="location" id="location">Searching…</div>
+        <div class="sub" id="dateNow">—</div>
+      </div>
+
+      <div class="meta">
+
+        <button id="searchToggleBtn" class="icon-btn" title="Search">
+
+          <svg class="icon-search" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+
+
+          <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <button id="refreshBtn" class="icon-btn" title="Refresh">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <polyline points="1 20 1 14 7 14"></polyline>
+            <path d="M3.51 9a9 9 0 0 1 14.13-3.36L23 10"></path>
+            <path d="M20.49 15a9 9 0 0 1-14.13 3.36L1 14"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="card current" id="currentCard">
+        <div class="weather-left">
+          <div id="weatherIcon" class="icon-large">☀️</div>
+        </div>
+        <div class="weather-right">
+          <div style="display:flex;align-items:baseline;gap:8px">
+            <div id="temp" class="temp">--°</div>
+            <div id="cond" class="cond">Loading</div>
+          </div>
+
+          <div class="meta-stats">
+            <div class="stat">🌬 <span id="wind">-- km/h</span></div>
+            <div class="stat">💧 <span id="rainp">--%</span></div>
+            <div class="stat">☔ <span id="rainmm">-- mm</span></div>
+          </div>
+
+          <div class="hi-lo">
+            <span id="hi">H: --°</span>
+            <span id="lo">L: --°</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="hourly" id="hourly"></section>
+
+      <section class="forecast-sheet" id="sevenDay">
+        <div class="sheet-handle"></div>
+        <h3>7-Day Forecast</h3>
+        <div id="dailyList" class="daily-list"></div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <small>Data: Open-Meteo • Geocoding: Nominatim • ByteBlink</small>
+    </footer>
+  </div>
+  <div id="searchWrap" class="search-overlay">
+    <div class="search-box">
+      <h3>Enter City Name:</h3>
+      <div style="display: flex;flex-direction: row;gap: 7px;">
+        <input id="searchInput" placeholder="Search city..." />
+        <button id="search2" class="icon-btn" title="Search">
+          <!-- magnifier (shown by default) -->
+          <svg class="icon-search" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
+      <div id="searchResults"></div>
+      <button id="closeDiv" class="icon-btn" title="close">Close
+      </button>
+    </div>
+  </div>
+
+  <script src="api.js"></script>
+  <script src="ui.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

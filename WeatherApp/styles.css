@@ -1,0 +1,322 @@
+:root {
+    --blur-bg: rgba(255, 255, 255, 0.08);
+    --border-light: rgba(255, 255, 255, 0.25);
+    --shadow-dark: rgba(0, 0, 0, 0.3);
+    --card-bg: rgba(255, 255, 255, 0.10);
+    --accent: #66a7ff;
+    --phone-w: 390px;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background: url('images/1.jpg') center/cover no-repeat fixed;
+    font-family: "Inter", system-ui, sans-serif;
+    color: #fff;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+/* Main glass container (the phone) */
+.phone-shell {
+    width: 100%;
+    max-width: var(--phone-w);
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+    box-sizing: border-box;
+
+    background: var(--blur-bg);
+    backdrop-filter: blur(25px) saturate(160%);
+    -webkit-backdrop-filter: blur(25px) saturate(160%);
+    border: 1px solid var(--border-light);
+    border-radius: 32px;
+    box-shadow: 0 20px 60px var(--shadow-dark);
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+/* Topbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 8px;
+}
+
+.location {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.sub {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+/* Glass buttons */
+.icon-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    color: #fff;
+    cursor: pointer;
+    padding: 6px;
+    transition: background 0.2s, transform 0.2s;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.icon-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
+}
+
+/* Search box */
+
+
+#searchInput {
+    width: 220px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid var(--border-light);
+    border-radius: 14px;
+    color: #27727a;
+    backdrop-filter: blur(12px);
+    outline: none;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+#searchInput::placeholder {
+    color: #6d92c0;
+}
+
+.search-results {
+    display: none;
+    background: rgba(255, 255, 255, 0.229);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(16px);
+    border-radius: 14px;
+    margin-top: 6px;
+    overflow: auto;
+    max-height: 200px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 99999;
+    margin-left: 10px;
+}
+
+.search-item {
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.search-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Cards */
+.card.current {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 18px;
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.35);
+    margin-top: 10px;
+}
+
+.icon-large {
+    font-size: 58px;
+}
+
+.temp {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.cond {
+    opacity: 0.95;
+}
+
+/* Hourly Scroll */
+.hourly {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    margin-top: 14px;
+    padding: 8px;
+    scrollbar-width: none;
+    margin-bottom: 5px;
+}
+
+.hour-item {
+    min-width: 70px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    padding: 10px 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Forecast sheet */
+.forecast-sheet {
+    margin-top: auto;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-light);
+    border-radius: 24px;
+    padding: 16px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.3);
+}
+
+.day-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 10px 14px;
+    margin-top: 6px;
+}
+
+/* Footer */
+.foot {
+    text-align: center;
+    font-size: 11px;
+    opacity: 0.8;
+    margin-top: 10px;
+}
+
+::-webkit-scrollbar {
+    height: 4px;
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 99px;
+}
+
+@media (min-width: 420px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .phone-shell {
+        height: 92vh;
+    }
+}
+
+.search-wrap {
+    position: absolute;
+    right: 60px;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 28px;
+    margin-right: 35px;
+}
+
+.icon-close {
+    display: none;
+}
+
+.search-input-area {
+    display: flex;
+    width: 220px;
+    margin-bottom: 6px
+}
+
+.search-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 60px;
+    z-index: 3000;
+    backdrop-filter: blur(20px) saturate(150%);
+    background: rgba(255, 255, 255, 0.05);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+}
+
+.search-box {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    padding: 12px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    font-size: medium;
+    backdrop-filter: blur(8px);
+}
+
+#searchResults {
+    margin-top: 8px;
+    max-height: 240px;
+    overflow: auto;
+    width: 100%;
+}
+
+.search-item {
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.08);
+    margin-bottom: 4px;
+    transition: background 0.2s;
+    color: #325aaa;
+    font-size: medium;
+}
+
+.search-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+#closeDiv {
+    width: 80%;
+    margin-bottom: 20px;
+    height: 37px;
+    font-size: medium;
+    color: rgba(255, 0, 0, 0.386);
+}
