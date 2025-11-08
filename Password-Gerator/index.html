@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./Assests/32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./Assests/16x16.png">
+    <title>G.K' Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1>Password Generator</h1>
+        <hr>
+        <input type="text" name="passwordBox" id="passwordBox" placeholder="Your Password Here..">
+        <div id="options">
+            <div id="passLength">
+                <label for="length2"><span id="rightPass">Length : 4 (min)</span></label><br>
+                <div id="rangeSelect">
+                    <abbr title="Min:4 , Max: 36"><input type="range" name="length" id="length2" value="4" min="4"
+                            max="36"></abbr>
+                </div>
+
+            </div>
+            <div>
+                <label for="numbers">Numbers</label>
+                <input id="numbers" type="checkbox" checked>
+            </div>
+            <div id="upperHldr">
+                <label for="uppercase">Uppercase</label>
+                <input id="uppercase" type="checkbox">
+            </div>
+            <div id="lowerHldr">
+                <label for="lowercase">Lowercase</label>
+                <input id="lowercase" type="checkbox">
+            </div>
+            <div>
+                <label for="special">Special Charecters</label>
+                <input id="special" type="checkbox">
+            </div>
+            <div id="buttonPallate">
+                <input type="button" value="Clear All" id="clearAll">
+                <input type="button" value="Generate" id="generatePassword">
+                <input type="button" value="Copy" id="copy">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<!-- ByteBlink -->

@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #15115e 25%, #2686bd);
+    width: 100vw;
+    height: 100vh;
+    background-size: 110%;
+
+}
+
+#container {
+    margin-top: 4vh;
+    border-radius: 15px;
+    padding: 4%;
+    width: 45%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #12126058;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(9px);
+    box-shadow: 0px 0px 500px 10px black;
+    color: #ffffff;
+}
+
+h1 {
+    padding: 0;
+    margin: 10px;
+    margin-top: 0px;
+}
+
+hr {
+    margin-bottom: 15px;
+}
+
+input {
+    cursor: pointer;
+}
+
+#container input[type="text"] {
+    width: 100%;
+    height: fit-content;
+    max-height: 35px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: large;
+    text-align: center;
+    color: #ffffff;
+    transition: all 0.2s ease;
+    background-color: #1a1667;
+    box-shadow: 1px 1px 3px #4c4899, inset 1px 1px 4px #030120;
+    color: white;
+    border: none;
+}
+
+#container input[type="text"]:hover {
+    scale: 1.05;
+}
+
+#container input[type="text"]::placeholder {
+    color: #38459c;
+    font-size: larger;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+abbr {
+    width: 100%;
+}
+
+#container input[type="range"] {
+    width: 100%;
+    height: 20px;
+    border-radius: 5px;
+    padding: 1px;
+    text-align: center;
+    margin: 0;
+    background: #f7f6ff2e;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    transition: all 0.2s ease;
+    accent-color: #f11aad;
+}
+
+#container input[type="range"]:hover {
+    background-color: #ffffffa1;
+    color: black;
+    box-shadow: 0 0 50px #ffffff85;
+}
+
+#container input[type="checkbox"] {
+    float: inline-end;
+    scale: 1.7;
+    margin-right: 6px;
+    transition: all 0.5s ease;
+}
+
+#container input[type="checkbox"]:hover {
+    transition: all 0.2s ease;
+    scale: 2.3;
+    box-shadow: 0 0 30px #fff;
+}
+
+#options>div {
+    margin: 20px;
+    font-size: medium;
+}
+
+#buttonPallate {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#buttonPallate input[type="button"] {
+    width: 50%;
+    height: 30px;
+    min-width: fit-content;
+    border-radius: 5px;
+    border: 0px;
+    margin: 5px;
+    background-color: #1a1667;
+    box-shadow: inset 1px 1px 2px #2b2597, 1px 1px 2px rgb(3, 3, 31);
+    color: white;
+    transition: all 0.5s ease;
+}
+
+#buttonPallate input[type="button"]:hover {
+    transition: all 0.5s ease;
+    box-shadow: 1px 1px 3px #4843a8, inset 1px 1px 4px #03031f;
+}
+
+input[type="checkbox"] {
+    accent-color: #f11aad;
+    opacity: 80%;
+}
+
+#rangeSelect {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#rightPass {
+    margin: 0px;
+}
+
+/* ByteBlink */
